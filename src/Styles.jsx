@@ -11,6 +11,11 @@ const useStyles = makeStyles((style) => ({
     top: "0",
     padding: "0.25em",
   },
+  navBarContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
 }));
 
 export { useStyles };
