@@ -10,8 +10,6 @@ export default function HighlightsDemo({
     readerModeDemo,
   },
 }) {
-  //const [state, setstate] = useState(initialState);
-
   useEffect(() => {
     const paragraphs = [...document.querySelectorAll("h5,h6")];
     paragraphs.forEach((paragraph) => {

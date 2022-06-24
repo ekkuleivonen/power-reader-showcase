@@ -52,7 +52,16 @@ export default function IndexPage() {
           }}
         />
       )}
-      {readerModeDemo && <ReaderModeDemo props={{ toggleReaderModeDemo }} />}
+      {readerModeDemo && (
+        <ReaderModeDemo
+          props={{
+            toggleHighlightsDemo,
+            toggleReaderModeDemo,
+            highlightsDemo,
+            readerModeDemo,
+          }}
+        />
+      )}
     </ThemeProvider>
   );
 }
