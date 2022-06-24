@@ -33,9 +33,25 @@ export default function IndexPage() {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       {defaultPage && (
-        <DefaultPage props={{ toggleHighlightsDemo, toggleReaderModeDemo }} />
+        <DefaultPage
+          props={{
+            toggleHighlightsDemo,
+            toggleReaderModeDemo,
+            highlightsDemo,
+            readerModeDemo,
+          }}
+        />
       )}
-      {highlightsDemo && <HighlightsDemo props={{ toggleHighlightsDemo }} />}
+      {highlightsDemo && (
+        <HighlightsDemo
+          props={{
+            toggleHighlightsDemo,
+            toggleReaderModeDemo,
+            highlightsDemo,
+            readerModeDemo,
+          }}
+        />
+      )}
       {readerModeDemo && <ReaderModeDemo props={{ toggleReaderModeDemo }} />}
     </ThemeProvider>
   );

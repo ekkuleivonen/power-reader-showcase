@@ -5,14 +5,19 @@ import ReaderModeSection from "../components/ReaderModeSection";
 import HighlightsSection from "../components/HighlightsSection";
 
 export default function DefaultPage({
-  props: { toggleHighlightsDemo, toggleReaderModeDemo },
+  props: {
+    toggleHighlightsDemo,
+    toggleReaderModeDemo,
+    highlightsDemo,
+    readerModeDemo,
+  },
 }) {
   return (
     <>
       <NavBar />
       <HeroSection />
-      <ReaderModeSection props={{ toggleReaderModeDemo }} />
-      <HighlightsSection props={{ toggleHighlightsDemo }} />
+      <ReaderModeSection props={{ toggleReaderModeDemo, readerModeDemo }} />
+      <HighlightsSection props={{ toggleHighlightsDemo, highlightsDemo }} />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Grid, Typography, Container, Switch } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Screenshot from "./Screenshot";
@@ -9,8 +9,15 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function HighlightsSection({ props: { toggleHighlightsDemo } }) {
+export default function HighlightsSection({
+  props: { toggleHighlightsDemo, highlightsDemo },
+}) {
   const styles = useStyles();
+  const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    setChecked(highlightsDemo);
+  }, [highlightsDemo]);
 
   return (
     <Box className={styles.section} component="section" my={20}>
@@ -37,7 +44,11 @@ export default function HighlightsSection({ props: { toggleHighlightsDemo } }) {
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur.
             </Typography>
-            <Switch onChange={toggleHighlightsDemo} />
+            <Switch
+              onChange={toggleHighlightsDemo}
+              id="highlights-toggle"
+              checked={checked}
+            />
           </Grid>
         </Grid>
       </Container>
