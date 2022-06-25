@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
 import DefaultPage from "../components/DefaultPage";
 import HighlightsDemo from "../components/HighlightsDemo";
 import ReaderModeDemo from "../components/ReaderModeDemo";
+import findTextContent from "../readerModePoppin";
 
 const darkTheme = createTheme({
   palette: {
@@ -18,6 +19,12 @@ export default function IndexPage() {
   const [highlightsDemo, setHighlightsDemo] = useState(false);
   const [readerModeDemo, setReaderModeDemo] = useState(false);
   const [defaultPage, setDefaultPage] = useState(true);
+  const [textContent, setTextContent] = useState([]);
+
+  useEffect(() => {
+    const foundTextContent = findTextContent();
+    setTextContent(foundTextContent);
+  }, []);
 
   const toggleHighlightsDemo = () => {
     setDefaultPage(!defaultPage);
@@ -25,7 +32,6 @@ export default function IndexPage() {
   };
 
   const toggleReaderModeDemo = () => {
-    setDefaultPage(!defaultPage);
     setReaderModeDemo(!readerModeDemo);
   };
 
@@ -54,12 +60,7 @@ export default function IndexPage() {
       )}
       {readerModeDemo && (
         <ReaderModeDemo
-          props={{
-            toggleHighlightsDemo,
-            toggleReaderModeDemo,
-            highlightsDemo,
-            readerModeDemo,
-          }}
+          props={{ textContent, toggleReaderModeDemo, setReaderModeDemo }}
         />
       )}
     </ThemeProvider>

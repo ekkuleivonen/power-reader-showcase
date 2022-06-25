@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Grid, Typography, Container, Switch } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Screenshot from "./Screenshot";
 
-const useStyles = makeStyles((style) => ({
+const useStyles = makeStyles(() => ({
   section: {
     width: "100%",
   },
 }));
 
-export default function ReaderModeSection({ props: { toggleReaderModeDemo } }) {
+export default function ReaderModeSection({
+  props: { toggleReaderModeDemo, readerModeDemo },
+}) {
   const styles = useStyles();
+  const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    setChecked(readerModeDemo);
+  }, [readerModeDemo]);
 
   return (
     <Box className={styles.section} component="section" my={20}>
@@ -37,7 +44,11 @@ export default function ReaderModeSection({ props: { toggleReaderModeDemo } }) {
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur.
             </Typography>
-            <Switch onChange={toggleReaderModeDemo} />
+            <Switch
+              onChange={toggleReaderModeDemo}
+              id="reader-mode-toggle"
+              checked={checked}
+            />
           </Grid>
         </Grid>
       </Container>

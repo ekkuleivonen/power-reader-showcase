@@ -1,36 +1,73 @@
-import React, { useState, useEffect } from "react";
-import DefaultPage from "./DefaultPage";
-import ReaderModeModal from "./ReaderModeModal";
-import findTextContent from "../readerModePoppin";
+import React, { useEffect } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Typography, Container, Paper } from "@material-ui/core";
+
+const useStyles = makeStyles(() => ({
+  backdrop: {
+    width: "100vw",
+    //height: "100vh",
+    position: "absolute",
+    top: "0",
+    zIndex: "1000000",
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
+  paper: {
+    padding: "4em",
+    marginTop: "2em",
+    overflow: "scroll",
+  },
+}));
 
 export default function ReaderModeDemo({
-  props: {
-    toggleHighlightsDemo,
-    toggleReaderModeDemo,
-    highlightsDemo,
-    readerModeDemo,
-  },
+  props: { textContent, toggleReaderModeDemo },
 }) {
-  const [readerMode, setReaderMode] = useState(false);
-  const [textContent, setTextContent] = useState([]);
+  const styles = useStyles();
 
   useEffect(() => {
-    const foundTextContent = findTextContent();
-    setTextContent(foundTextContent);
-    setReaderMode(readerModeDemo);
-  }, [readerModeDemo]);
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+    window.addEventListener("scroll", stopScrollOnEnd);
+    window.addEventListener("keydown", () => toggleReaderModeDemo());
+    window.addEventListener("click", handleClick);
+    return () => {
+      window.removeEventListener("scroll", stopScrollOnEnd);
+      window.removeEventListener("keydown", handleKeydown);
+      window.removeEventListener("click", handleClick);
+    };
+  });
+
+  const handleKeydown = () => {
+    const readerModeToggle = document.getElementById("reader-mode-toggle");
+    readerModeToggle.checked = false;
+    toggleReaderModeDemo();
+  };
+
+  const handleClick = (e) => {
+    const backdrop = document.getElementById("backdrop");
+    if (e.target !== backdrop) return;
+    const readerModeToggle = document.getElementById("reader-mode-toggle");
+    console.log(readerModeToggle);
+    toggleReaderModeDemo();
+  };
+
+  const stopScrollOnEnd = (e) => {
+    const paper = document.getElementById("paper");
+    const paperEnd =
+      paper.offsetHeight + paper.offsetTop - window.innerHeight + 50;
+    if (window.scrollY < paperEnd) return;
+    return window.scroll(0, paperEnd);
+  };
 
   return (
-    <>
-      <DefaultPage
-        props={{
-          toggleHighlightsDemo,
-          toggleReaderModeDemo,
-          highlightsDemo,
-          readerModeDemo,
-        }}
-      />
-      {readerMode && <ReaderModeModal props={{ textContent }} />}
-    </>
+    <div className={styles.backdrop} id="backdrop">
+      <Container maxWidth="md">
+        <Paper className={styles.paper} elevation={16} id="paper">
+          {textContent.map((text) => (
+            <Typography variant={text.tagName.toLowerCase()}>
+              {text.innerHTML}
+            </Typography>
+          ))}
+        </Paper>
+      </Container>
+    </div>
   );
 }

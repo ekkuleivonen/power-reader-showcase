@@ -11,14 +11,19 @@ export default function HighlightsDemo({
   },
 }) {
   useEffect(() => {
-    const paragraphs = [...document.querySelectorAll("h5,h6")];
+    let paragraphs;
+    if (readerModeDemo) {
+      const readerPaper = document.getElementById("paper");
+      paragraphs = readerPaper.querySelectorAll("h5,h6");
+    } else paragraphs = [...document.querySelectorAll("h5,h6")];
+    console.log(paragraphs);
     paragraphs.forEach((paragraph) => {
       paragraph.childNodes.forEach((node, idx) => {
         const newChildNode = replaceChildNode(node);
         return paragraph.replaceChild(newChildNode, paragraph.childNodes[idx]);
       });
     });
-  }, []);
+  }, [readerModeDemo]);
 
   return (
     <DefaultPage
