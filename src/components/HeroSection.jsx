@@ -5,11 +5,9 @@ import {
   Typography,
   Button,
   Container,
-  Hidden,
   Fade,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import BeforeAfter from "./BeforeAfter";
 
 const useStyles = makeStyles(() => ({
   section: {
@@ -48,7 +46,7 @@ export default function HeroSection() {
           justifyContent="space-between"
         >
           <Fade in={shouldShow}>
-            <Grid item xs={12} sm={12} md={7} lg={7}>
+            <Grid item xs={12} sm={12} md={8} lg={8}>
               <Typography component="h1" variant="h1">
                 Read through the noise.
               </Typography>
@@ -72,11 +70,6 @@ export default function HeroSection() {
               </Box>
             </Grid>
           </Fade>
-          <Hidden smDown>
-            <Grid item>
-              <BeforeAfter />
-            </Grid>
-          </Hidden>
         </Grid>
       </Container>
     </Box>

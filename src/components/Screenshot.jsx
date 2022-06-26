@@ -2,13 +2,6 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 export default function Screenshot({ imgName }) {
-  if (imgName === "reader-mode") {
-    return (
-      <div>
-        {imgName && <StaticImage src="../images/reader-mode.jpg" alt="xxx" />}
-      </div>
-    );
-  }
   if (imgName === "highlights") {
     return (
       <div

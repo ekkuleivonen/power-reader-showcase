@@ -68,6 +68,7 @@ export default function NavBar() {
                 color="textPrimary"
                 variant="button"
                 underline="none"
+                style={{ fontWeight: "600", opacity: "90%" }}
                 onClick={(e) => scrollToSection(e)}
               >
                 {link.name}
@@ -102,6 +103,8 @@ export default function NavBar() {
                 color="textPrimary"
                 variant="button"
                 underline="none"
+                style={{ fontWeight: "bold" }}
+                onClick={(e) => scrollToSection(e)}
               >
                 {link.name}
               </Link>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Grid, Typography, Container, Switch } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Screenshot from "./Screenshot";
+import BeforeAfter from "./BeforeAfter";
 
 const useStyles = makeStyles(() => ({
   section: {
@@ -40,7 +40,7 @@ export default function ReaderModeSection({
           spacing={10}
         >
           <Grid item xs={12} sm={12} md={5} lg={5}>
-            <Screenshot imgName="reader-mode" />
+            <BeforeAfter />
           </Grid>
 
           <Grid item xs={12} sm={12} md={7} lg={7}>

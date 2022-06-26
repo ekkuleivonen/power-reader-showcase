@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import DefaultPage from "./DefaultPage";
-import replaceChildNode from "../wordHighlighting";
+import replaceChildNode from "../utils/wordHighlighting";
 
 export default function HighlightsDemo({
   props: {

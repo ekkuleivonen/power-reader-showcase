@@ -4,7 +4,7 @@ import { CssBaseline } from "@material-ui/core";
 import DefaultPage from "../components/DefaultPage";
 import HighlightsDemo from "../components/HighlightsDemo";
 import ReaderModeDemo from "../components/ReaderModeDemo";
-import findTextContent from "../readerModePoppin";
+import findTextContent from "../utils/readerModePoppin";
 
 const darkTheme = createTheme({
   palette: {
