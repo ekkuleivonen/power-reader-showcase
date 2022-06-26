@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
     width: "100%",
   },
   paper: {
-    padding: "4em",
+    padding: "4em 2em 4em 2em",
   },
   textdiv: {
     textAlign: "center",

@@ -12,11 +12,13 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(() => ({
   section: {
     width: "100%",
-    height: "95vh",
+    minHeight: "95vh",
     backgroundImage:
       "linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1491309055486-24ae511c15c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80)",
     backgroundSize: "cover",
     backgroundPosition: "center",
+    display: "flex",
+    alignItems: "center",
   },
   container: {
     height: "100%",
@@ -63,9 +65,10 @@ export default function HeroSection() {
                   variant="outlined"
                   color="secondary"
                   size="large"
-                  href="www.google.com"
+                  href="https://github.com/ekkuleivonen/power-reader"
+                  target="_blank"
                 >
-                  Install extension
+                  Download extension
                 </Button>
               </Box>
             </Grid>

@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import {
+  createTheme,
+  ThemeProvider,
+  responsiveFontSizes,
+} from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
 import DefaultPage from "../components/DefaultPage";
 import HighlightsDemo from "../components/HighlightsDemo";
 import ReaderModeDemo from "../components/ReaderModeDemo";
 import findTextContent from "../utils/readerModePoppin";
 
-const darkTheme = createTheme({
+import findOverflows from "../utils/overflows";
+
+let darkTheme = createTheme({
   palette: {
     type: "dark",
     secondary: {
@@ -14,6 +20,8 @@ const darkTheme = createTheme({
     },
   },
 });
+
+darkTheme = responsiveFontSizes(darkTheme);
 
 export default function IndexPage() {
   const [highlightsDemo, setHighlightsDemo] = useState(false);
@@ -24,6 +32,7 @@ export default function IndexPage() {
   useEffect(() => {
     const foundTextContent = findTextContent();
     setTextContent(foundTextContent);
+    findOverflows();
   }, []);
 
   const toggleHighlightsDemo = () => {

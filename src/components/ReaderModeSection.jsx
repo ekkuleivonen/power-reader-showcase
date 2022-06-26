@@ -11,6 +11,7 @@ const useStyles = makeStyles(() => ({
     color: "orange",
     display: "flex",
     alignItems: "center",
+    marginTop: "5px",
   },
 }));
 
@@ -37,7 +38,7 @@ export default function ReaderModeSection({
           container
           alignItems="center"
           justifyContent="space-between"
-          spacing={10}
+          spacing={5}
         >
           <Grid item xs={12} sm={12} md={5} lg={5}>
             <BeforeAfter />
@@ -61,7 +62,7 @@ export default function ReaderModeSection({
                 id="reader-mode-toggle"
                 checked={checked}
               />
-              Try me!
+              <Typography variant="body1">Try me!</Typography>
             </div>
           </Grid>
         </Grid>

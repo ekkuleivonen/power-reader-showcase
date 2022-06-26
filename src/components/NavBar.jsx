@@ -90,7 +90,10 @@ export default function NavBar() {
       >
         <div>
           <IconButton>
-            <ChevronRightIcon onClick={() => setOpen(false)} />
+            <ChevronRightIcon
+              onClick={() => setOpen(false)}
+              id="mobile-menu-toggle"
+            />
           </IconButton>
         </div>
         <Divider />

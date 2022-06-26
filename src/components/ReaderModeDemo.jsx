@@ -42,10 +42,8 @@ export default function ReaderModeDemo({
   };
 
   const handleClick = (e) => {
-    const backdrop = document.getElementById("backdrop");
-    if (e.target !== backdrop) return;
     const readerModeToggle = document.getElementById("reader-mode-toggle");
-    console.log(readerModeToggle);
+    if (e.target === readerModeToggle) return;
     toggleReaderModeDemo();
   };
 
