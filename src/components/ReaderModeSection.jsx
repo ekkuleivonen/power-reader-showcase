@@ -7,6 +7,11 @@ const useStyles = makeStyles(() => ({
   section: {
     width: "100%",
   },
+  tryme: {
+    color: "orange",
+    display: "flex",
+    alignItems: "center",
+  },
 }));
 
 export default function ReaderModeSection({
@@ -20,16 +25,22 @@ export default function ReaderModeSection({
   }, [readerModeDemo]);
 
   return (
-    <Box className={styles.section} component="section" my={20}>
+    <Box
+      className={styles.section}
+      component="section"
+      id="reader-mode"
+      my={20}
+    >
       <Container maxWidth="lg">
         <Grid
           className={styles.content}
           container
           alignItems="center"
           justifyContent="space-between"
+          spacing={10}
         >
           <Grid item xs={12} sm={12} md={5} lg={5}>
-            <Screenshot />
+            <Screenshot imgName="reader-mode" />
           </Grid>
 
           <Grid item xs={12} sm={12} md={7} lg={7}>
@@ -44,11 +55,14 @@ export default function ReaderModeSection({
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur.
             </Typography>
-            <Switch
-              onChange={toggleReaderModeDemo}
-              id="reader-mode-toggle"
-              checked={checked}
-            />
+            <div className={styles.tryme}>
+              <Switch
+                onChange={toggleReaderModeDemo}
+                id="reader-mode-toggle"
+                checked={checked}
+              />
+              Try me!
+            </div>
           </Grid>
         </Grid>
       </Container>

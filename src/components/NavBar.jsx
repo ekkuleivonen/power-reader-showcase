@@ -36,15 +36,24 @@ const useStyles = makeStyles(() => ({
 }));
 
 const navigationLinks = [
-  { name: "Reader mode", href: "www.google.com/1" },
-  { name: "Highlights", href: "www.google.com/2" },
-  { name: "What's new", href: "www.google.com/3" },
-  { name: "Contribute", href: "www.google.com/4" },
+  { name: "Reader mode", href: "#reader-mode" },
+  { name: "Highlights", href: "#highlights" },
+  { name: "What's new", href: "#whats-new" },
+  { name: "Contribute", href: "#contribute" },
 ];
 
 export default function NavBar() {
   const styles = useStyles();
   const [open, setOpen] = useState(false);
+
+  const scrollToSection = (e) => {
+    e.preventDefault();
+    const sectionId = e.target.href.split("#")[1];
+    document
+      .getElementById(sectionId)
+      .scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   return (
     <AppBar position="sticky" color="default" component="header">
       <Container maxWidth="lg">
@@ -59,6 +68,7 @@ export default function NavBar() {
                 color="textPrimary"
                 variant="button"
                 underline="none"
+                onClick={(e) => scrollToSection(e)}
               >
                 {link.name}
               </Link>
