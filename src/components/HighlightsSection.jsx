@@ -39,7 +39,7 @@ export default function HighlightsSection({
           </Grid>
           <Grid item xs={12} sm={12} md={7} lg={7}>
             <Typography component="h2" variant="h2">
-              Highlights.
+              Highlights
             </Typography>
             <Typography variant="h6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

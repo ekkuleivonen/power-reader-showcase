@@ -5,7 +5,7 @@ import { Typography, Container, Paper } from "@material-ui/core";
 const useStyles = makeStyles(() => ({
   backdrop: {
     width: "100vw",
-    //height: "100vh",
+    paddingBottom: "50px",
     position: "absolute",
     top: "0",
     zIndex: "1000000",

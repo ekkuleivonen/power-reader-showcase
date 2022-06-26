@@ -4,17 +4,26 @@ import { StaticImage } from "gatsby-plugin-image";
 export default function Screenshot({ imgName }) {
   if (imgName === "reader-mode") {
     return (
-      <div>{imgName && <StaticImage src="../images/icon.png" alt="xxx" />}</div>
+      <div>
+        {imgName && <StaticImage src="../images/reader-mode.jpg" alt="xxx" />}
+      </div>
     );
   }
   if (imgName === "highlights") {
     return (
-      <div>{imgName && <StaticImage src="../images/icon.png" alt="xxx" />}</div>
+      <div
+        style={{
+          boxShadow: "0px 10px 50px 0px rgba(0,0,0,0.75)",
+          padding: "1em",
+        }}
+      >
+        {imgName && <StaticImage src="../images/highlights.jpg" alt="xxx" />}
+      </div>
     );
   }
   if (imgName === "whats-next") {
     return (
-      <div>
+      <div style={{ padding: "2em" }}>
         {imgName && (
           <StaticImage src="../images/chrome-store-icon.webp" alt="xxx" />
         )}
