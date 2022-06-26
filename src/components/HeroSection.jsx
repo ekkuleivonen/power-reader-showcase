@@ -50,7 +50,7 @@ export default function HeroSection() {
           <Fade in={shouldShow}>
             <Grid item xs={12} sm={12} md={7} lg={7}>
               <Typography component="h1" variant="h1">
-                Read past the noise.
+                Read through the noise.
               </Typography>
               <Typography variant="h5">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
