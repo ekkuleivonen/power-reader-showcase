@@ -63,7 +63,7 @@ export default function IndexPage() {
         />
         <meta
           itemprop="image"
-          content="https://media.giphy.com/media/Rm0pvs3ZrJ8YOJ0pZ7/giphy-downsized.gif"
+          content="https://i.giphy.com/media/Rm0pvs3ZrJ8YOJ0pZ7/giphy-downsized.gif"
         />
 
         <meta property="og:url" content="https://power-reader.netlify.app" />
@@ -75,7 +75,7 @@ export default function IndexPage() {
         />
         <meta
           property="og:image"
-          content="https://media.giphy.com/media/Rm0pvs3ZrJ8YOJ0pZ7/giphy-downsized.gif"
+          content="https://i.giphy.com/media/Rm0pvs3ZrJ8YOJ0pZ7/giphy-downsized.gif"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -86,7 +86,7 @@ export default function IndexPage() {
         />
         <meta
           name="twitter:image"
-          content="https://media.giphy.com/media/Rm0pvs3ZrJ8YOJ0pZ7/giphy-downsized.gif"
+          content="https://i.giphy.com/media/Rm0pvs3ZrJ8YOJ0pZ7/giphy-downsized.gif"
         />
       </Helmet>
       <ThemeProvider theme={darkTheme}>
