@@ -21,9 +21,11 @@ export default function ReaderModeSection({
 }) {
   const styles = useStyles();
   const [checked, setChecked] = useState(false);
+  const [sectionLoaded, setSectionLoaded] = useState(false);
 
   useEffect(() => {
     setChecked(readerModeDemo);
+    setSectionLoaded(true);
   }, [readerModeDemo]);
 
   return (
@@ -42,7 +44,7 @@ export default function ReaderModeSection({
           spacing={5}
         >
           <Grid item xs={12} sm={12} md={5} lg={5}>
-            <BeforeAfter />
+            {sectionLoaded && <BeforeAfter />}
           </Grid>
 
           <Grid item xs={12} sm={12} md={7} lg={7}>

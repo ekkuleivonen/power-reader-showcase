@@ -21,9 +21,11 @@ export default function HighlightsSection({
 }) {
   const styles = useStyles();
   const [checked, setChecked] = useState(false);
+  const [sectionLoaded, setSectionLoaded] = useState(false);
 
   useEffect(() => {
     setChecked(highlightsDemo);
+    setSectionLoaded(true);
   }, [highlightsDemo]);
 
   return (
@@ -37,7 +39,7 @@ export default function HighlightsSection({
           spacing={5}
         >
           <Grid item xs={12} sm={12} md={5} lg={5}>
-            <Screenshot imgName="highlights" />
+            {sectionLoaded && <Screenshot imgName="highlights" />}
           </Grid>
           <Grid item xs={12} sm={12} md={7} lg={7}>
             <Typography component="h2" variant="h2">
