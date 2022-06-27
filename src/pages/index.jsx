@@ -26,6 +26,11 @@ export default function IndexPage() {
   const [readerModeDemo, setReaderModeDemo] = useState(false);
   const [defaultPage, setDefaultPage] = useState(true);
   const [textContent, setTextContent] = useState([]);
+  const [pageReady, setPageReady] = useState(false);
+
+  useEffect(() => {
+    setPageReady(true);
+  }, []);
 
   useEffect(() => {
     const foundTextContent = findTextContent();
@@ -40,7 +45,7 @@ export default function IndexPage() {
   const toggleReaderModeDemo = () => {
     setReaderModeDemo(!readerModeDemo);
   };
-
+  if (!pageReady) return <div>Loading...</div>;
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
