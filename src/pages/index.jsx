@@ -56,6 +56,38 @@ export default function IndexPage() {
           name="description"
           content="Consume web without distractions. Power reader extension removes irrelevant content from your browser and highlights words to help you read faster."
         />
+        <meta itemprop="name" content="Power reader" />
+        <meta
+          itemprop="description"
+          content="Consume web without distractions. Power reader extension removes irrelevant content from your browser and highlights words to help you read faster."
+        />
+        <meta
+          itemprop="image"
+          content="https://media.giphy.com/media/Rm0pvs3ZrJ8YOJ0pZ7/giphy-downsized.gif"
+        />
+
+        <meta property="og:url" content="https://power-reader.netlify.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Power reader" />
+        <meta
+          property="og:description"
+          content="Consume web without distractions. Power reader extension removes irrelevant content from your browser and highlights words to help you read faster."
+        />
+        <meta
+          property="og:image"
+          content="https://media.giphy.com/media/Rm0pvs3ZrJ8YOJ0pZ7/giphy-downsized.gif"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Power reader" />
+        <meta
+          name="twitter:description"
+          content="Consume web without distractions. Power reader extension removes irrelevant content from your browser and highlights words to help you read faster."
+        />
+        <meta
+          name="twitter:image"
+          content="https://media.giphy.com/media/Rm0pvs3ZrJ8YOJ0pZ7/giphy-downsized.gif"
+        />
       </Helmet>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
