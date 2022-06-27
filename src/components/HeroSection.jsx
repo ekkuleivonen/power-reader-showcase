@@ -65,10 +65,10 @@ export default function HeroSection() {
                   variant="outlined"
                   color="secondary"
                   size="large"
-                  href="https://github.com/ekkuleivonen/power-reader"
+                  href="https://chrome.google.com/webstore/detail/power-reader/nbcahfbfaadblegckfjhhlhemhahnpbc"
                   target="_blank"
                 >
-                  Download extension
+                  Install extension
                 </Button>
               </Box>
             </Grid>
