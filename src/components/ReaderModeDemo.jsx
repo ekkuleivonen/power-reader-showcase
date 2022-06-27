@@ -31,6 +31,7 @@ export default function ReaderModeDemo({
     window.addEventListener("scroll", stopScrollOnEnd);
     window.addEventListener("keydown", () => toggleReaderModeDemo());
     window.addEventListener("click", handleClick);
+    console.log(textContent);
     return () => {
       window.removeEventListener("scroll", stopScrollOnEnd);
       window.removeEventListener("keydown", handleKeydown);

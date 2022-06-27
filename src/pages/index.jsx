@@ -25,7 +25,7 @@ export default function IndexPage() {
   const [highlightsDemo, setHighlightsDemo] = useState(false);
   const [readerModeDemo, setReaderModeDemo] = useState(false);
   const [defaultPage, setDefaultPage] = useState(true);
-  const [textContent, setTextContent] = useState([]);
+  const [textContent, setTextContent] = useState(false);
   const [pageReady, setPageReady] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function IndexPage() {
   useEffect(() => {
     const foundTextContent = findTextContent();
     setTextContent(foundTextContent);
-  }, []);
+  }, [pageReady]);
 
   const toggleHighlightsDemo = () => {
     setDefaultPage(!defaultPage);
@@ -69,7 +69,7 @@ export default function IndexPage() {
           }}
         />
       )}
-      {readerModeDemo && (
+      {readerModeDemo && textContent && (
         <ReaderModeDemo
           props={{ textContent, toggleReaderModeDemo, setReaderModeDemo }}
         />
