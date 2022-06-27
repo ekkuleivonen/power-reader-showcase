@@ -45,17 +45,7 @@ export default function IndexPage() {
   const toggleReaderModeDemo = () => {
     setReaderModeDemo(!readerModeDemo);
   };
-  if (!pageReady)
-    return (
-      <div
-        style={{
-          backgroundColor: "#303030",
-          width: "100vw",
-          height: "100vh",
-          margin: "0",
-        }}
-      />
-    );
+  if (!pageReady) return <div />;
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
