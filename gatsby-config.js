@@ -13,7 +13,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
-        stylesProvider: {
+        ThemeProvider: {
           injectFirst: true,
         },
       },
