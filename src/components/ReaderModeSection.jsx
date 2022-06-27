@@ -31,7 +31,7 @@ export default function ReaderModeSection({
       className={styles.section}
       component="section"
       id="reader-mode"
-      py={20}
+      py={10}
     >
       <Container maxWidth="lg">
         <Grid

@@ -34,7 +34,7 @@ chrome.storage.onChanged.addListener((changes, area) => {
 export default function ContributeSection() {
   const styles = useStyles();
   return (
-    <Box className={styles.section} component="section" my={20} id="contribute">
+    <Box className={styles.section} component="section" py={10} id="contribute">
       <Container maxWidth="md">
         <Paper elevation={8} className={styles.paper}>
           <Grid

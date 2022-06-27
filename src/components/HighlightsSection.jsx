@@ -27,7 +27,7 @@ export default function HighlightsSection({
   }, [highlightsDemo]);
 
   return (
-    <Box className={styles.section} component="section" id="highlights" py={20}>
+    <Box className={styles.section} component="section" id="highlights" py={10}>
       <Container maxWidth="lg">
         <Grid
           className={styles.content}

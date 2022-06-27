@@ -16,6 +16,9 @@ const useStyles = makeStyles(() => ({
     marginTop: "2em",
     overflow: "scroll",
   },
+  paragraph: {
+    marginBottom: "1.5em",
+  },
 }));
 
 export default function ReaderModeDemo({
@@ -51,8 +54,29 @@ export default function ReaderModeDemo({
     const paper = document.getElementById("paper");
     const paperEnd =
       paper.offsetHeight + paper.offsetTop - window.innerHeight + 50;
-    if (window.scrollY < paperEnd) return;
-    return window.scroll(0, paperEnd);
+
+    const enableScroll = () => {
+      document.body.style.height = "auto";
+      document.body.style.overflow = "auto";
+    };
+
+    const disableScroll = () => {
+      document.body.style.height = `${paperEnd}px`;
+      document.body.style.overflow = "hidden";
+      return window.scroll(0, paperEnd);
+    };
+
+    if (window.scrollY <= paperEnd) return enableScroll();
+    if (window.scrollY > paperEnd) return disableScroll();
+  };
+
+  const assingClassName = (text) => {
+    if (
+      text.tagName.toLowerCase() === "h5" ||
+      text.tagName.toLowerCase() === "h6"
+    ) {
+      return styles.paragraph;
+    } else return "";
   };
 
   return (
@@ -60,7 +84,10 @@ export default function ReaderModeDemo({
       <Container maxWidth="md">
         <Paper className={styles.paper} elevation={16} id="paper">
           {textContent.map((text) => (
-            <Typography variant={text.tagName.toLowerCase()}>
+            <Typography
+              variant={text.tagName.toLowerCase()}
+              className={assingClassName(text)}
+            >
               {text.innerHTML}
             </Typography>
           ))}
