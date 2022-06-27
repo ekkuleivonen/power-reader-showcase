@@ -11,6 +11,15 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-material-ui",
     {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        themeProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/images/icon.png",
