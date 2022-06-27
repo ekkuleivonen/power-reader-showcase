@@ -19,7 +19,6 @@ export default function Screenshot({ imgName }) {
       </div>
     );
   }
-
   if (imgName === "whats-next") {
     return (
       <div style={{ padding: "0em 2em 0em 2em" }}>
