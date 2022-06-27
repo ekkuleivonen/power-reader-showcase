@@ -6,6 +6,7 @@ import BeforeAfter from "./BeforeAfter";
 const useStyles = makeStyles(() => ({
   section: {
     width: "100%",
+    overflowX: "hidden",
   },
   tryme: {
     color: "orange",
@@ -30,7 +31,7 @@ export default function ReaderModeSection({
       className={styles.section}
       component="section"
       id="reader-mode"
-      my={20}
+      py={20}
     >
       <Container maxWidth="lg">
         <Grid

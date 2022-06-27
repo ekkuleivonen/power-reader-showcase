@@ -6,13 +6,14 @@ import Screenshot from "./Screenshot";
 const useStyles = makeStyles(() => ({
   section: {
     width: "100%",
+    overflowX: "hidden",
   },
 }));
 
 export default function WhatsNewSection() {
   const styles = useStyles();
   return (
-    <Box className={styles.section} component="section" my={20} id="whats-new">
+    <Box className={styles.section} component="section" py={20} id="whats-new">
       <Container maxWidth="lg">
         <Grid
           className={styles.content}

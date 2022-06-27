@@ -6,6 +6,7 @@ import Screenshot from "./Screenshot";
 const useStyles = makeStyles(() => ({
   section: {
     width: "100%",
+    overflowX: "hidden",
   },
   tryme: {
     color: "orange",
@@ -26,7 +27,7 @@ export default function HighlightsSection({
   }, [highlightsDemo]);
 
   return (
-    <Box className={styles.section} component="section" id="highlights" my={20}>
+    <Box className={styles.section} component="section" id="highlights" py={20}>
       <Container maxWidth="lg">
         <Grid
           className={styles.content}

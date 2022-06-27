@@ -10,8 +10,6 @@ import HighlightsDemo from "../components/HighlightsDemo";
 import ReaderModeDemo from "../components/ReaderModeDemo";
 import findTextContent from "../utils/readerModePoppin";
 
-import findOverflows from "../utils/overflows";
-
 let darkTheme = createTheme({
   palette: {
     type: "dark",
@@ -32,7 +30,6 @@ export default function IndexPage() {
   useEffect(() => {
     const foundTextContent = findTextContent();
     setTextContent(foundTextContent);
-    findOverflows();
   }, []);
 
   const toggleHighlightsDemo = () => {
