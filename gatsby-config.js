@@ -4,11 +4,6 @@ module.exports = {
     siteUrl: `https://power-reader.netlify.app`,
   },
   plugins: [
-    "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-netlify",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     "gatsby-plugin-material-ui",
     {
       resolve: `gatsby-plugin-material-ui`,
@@ -18,6 +13,11 @@ module.exports = {
         },
       },
     },
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-netlify",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
 
     {
       resolve: "gatsby-plugin-manifest",
