@@ -5,14 +5,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-material-ui",
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        ThemeProvider: {
-          injectFirst: true,
-        },
-      },
-    },
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-netlify",
