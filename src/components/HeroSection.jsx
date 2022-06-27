@@ -53,12 +53,10 @@ export default function HeroSection() {
                 Read through the noise.
               </Typography>
               <Typography variant="h5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur1.
+                Filter out the irrelevant from websites and consume written
+                content at twice the speed. Power reader is a chrome extension
+                that introduces a safari-like reader mode to your browser, and
+                highlights each paragraph for a better reading experience.
               </Typography>
               <Box my={3}>
                 <Button

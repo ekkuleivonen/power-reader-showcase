@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Typography, Container } from "@material-ui/core";
+import { Box, Grid, Typography, Container, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Screenshot from "./Screenshot";
 
@@ -31,13 +31,22 @@ export default function WhatsNewSection() {
               Power-reader beta in Chrome store
             </Typography>
             <Typography variant="h6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              After a week of nervously biting my nails, a beta version of the
+              extension finally passed Google's security checks and is now
+              available for early testing in the Chrome store. Next iteration is
+              already under the press, and will be released in the coming weeks.
             </Typography>
+            <Box my={3}>
+              <Button
+                variant="outlined"
+                color="secondary"
+                size="large"
+                href="https://chrome.google.com/webstore/detail/power-reader/nbcahfbfaadblegckfjhhlhemhahnpbc"
+                target="_blank"
+              >
+                Try out the beta version
+              </Button>
+            </Box>
           </Grid>
         </Grid>
       </Container>

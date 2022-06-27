@@ -46,12 +46,12 @@ export default function HighlightsSection({
               Highlights
             </Typography>
             <Typography variant="h6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur2.
+              Turn on text highlights to increase your reading speed. The plugin
+              bolds the first few letters of each word in the main content of
+              the website. These bolded letters create “artificial fixation
+              points,” which allow your eyes to “skip” over words while your
+              brain center automatically fills in the rest and still absorbs the
+              meaning.
             </Typography>
             <div className={styles.tryme}>
               <Switch

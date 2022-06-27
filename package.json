@@ -5,7 +5,11 @@
   "description": "power-reader-showcase",
   "author": "ekkuleivonen",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "power-reader",
+    "showcase",
+    "power-reader-showcase",
+    "power-reader-showcase-gatsby"
   ],
   "scripts": {
     "develop": "gatsby develop",

@@ -49,15 +49,13 @@ export default function ReaderModeSection({
 
           <Grid item xs={12} sm={12} md={7} lg={7}>
             <Typography component="h2" variant="h2">
-              Reader Mode
+              Reader mode
             </Typography>
             <Typography variant="h6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              Use the reader mode plugin to view a web page article in one page,
+              formatted for easy reading, and presented without ads, navigation
+              or other distracting items. The plugin comes with inbuilt keyboard
+              shortcuts to help you toggle it based on your preferences.
             </Typography>
             <div className={styles.tryme}>
               <Switch
