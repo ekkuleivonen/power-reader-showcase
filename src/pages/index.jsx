@@ -48,7 +48,12 @@ export default function IndexPage() {
   if (!pageReady)
     return (
       <div
-        style={{ backgroundColor: "#303030", width: "100vw", height: "100vh" }}
+        style={{
+          backgroundColor: "#303030",
+          width: "100vw",
+          height: "100vh",
+          margin: "0",
+        }}
       />
     );
   return (
