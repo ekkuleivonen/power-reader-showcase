@@ -9,6 +9,8 @@ import DefaultPage from "../components/DefaultPage";
 import HighlightsDemo from "../components/HighlightsDemo";
 import ReaderModeDemo from "../components/ReaderModeDemo";
 import findTextContent from "../utils/readerModePoppin";
+import { Helmet } from "react-helmet";
+// import SEO from "../components/seo";
 
 let darkTheme = createTheme({
   palette: {
@@ -47,33 +49,42 @@ export default function IndexPage() {
   };
   if (!pageReady) return <div />;
   return (
-    <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-      {defaultPage && (
-        <DefaultPage
-          props={{
-            toggleHighlightsDemo,
-            toggleReaderModeDemo,
-            highlightsDemo,
-            readerModeDemo,
-          }}
+    <>
+      <Helmet>
+        <title>Power reader</title>
+        <meta
+          name="description"
+          content="Consume web without distractions. Power reader extension removes irrelevant content from your browser and highlights words to help you read faster."
         />
-      )}
-      {highlightsDemo && (
-        <HighlightsDemo
-          props={{
-            toggleHighlightsDemo,
-            toggleReaderModeDemo,
-            highlightsDemo,
-            readerModeDemo,
-          }}
-        />
-      )}
-      {readerModeDemo && textContent && (
-        <ReaderModeDemo
-          props={{ textContent, toggleReaderModeDemo, setReaderModeDemo }}
-        />
-      )}
-    </ThemeProvider>
+      </Helmet>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        {defaultPage && (
+          <DefaultPage
+            props={{
+              toggleHighlightsDemo,
+              toggleReaderModeDemo,
+              highlightsDemo,
+              readerModeDemo,
+            }}
+          />
+        )}
+        {highlightsDemo && (
+          <HighlightsDemo
+            props={{
+              toggleHighlightsDemo,
+              toggleReaderModeDemo,
+              highlightsDemo,
+              readerModeDemo,
+            }}
+          />
+        )}
+        {readerModeDemo && textContent && (
+          <ReaderModeDemo
+            props={{ textContent, toggleReaderModeDemo, setReaderModeDemo }}
+          />
+        )}
+      </ThemeProvider>
+    </>
   );
 }
