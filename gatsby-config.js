@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `power-reader-showcase`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://power-reader.netlify.app`,
   },
   plugins: [
     "gatsby-plugin-image",
